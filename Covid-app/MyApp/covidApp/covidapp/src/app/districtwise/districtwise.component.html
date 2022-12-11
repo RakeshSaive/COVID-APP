@@ -1,0 +1,39 @@
+<div class="container">
+    <span style="padding: 20px;">
+    <mat-form-field appearance="fill">
+        <mat-label>List of States</mat-label>
+        <mat-select (selectionChange)="selectionChange($event)">
+          <mat-option *ngFor="let state of ListOfState" [value]="state">
+            {{state}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>   
+</span>
+     
+<span>
+    <mat-form-field appearance="fill">
+        <mat-label>List of Districts</mat-label>
+        <mat-select (selectionChange)="getdisData($event)">
+            <mat-option *ngFor="let dis of ListOfDistrict" [value]="dis">
+            {{dis}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>   
+    <div class="disdata">
+        <div class="card" style="background-color: rgb(0, 255, 255)">
+            <div class="card-header Discolo">
+              District Data
+            </div>
+            <div class="card-body cbody">
+              <h5 class="card-title">District Data</h5>
+              <p class="card-text">Confirmed Cases:{{SelectedDistrictData?.confirmed}}</p>
+              <p class="card-text">Active Cases:{{SelectedDistrictData?.active}}</p>
+              <p class="card-text">Recovered Cases:{{SelectedDistrictData?.recovered}}</p>
+              <p class="card-text">Delta:{{SelectedDistrictData?.delta.confirmed}}</p>
+              <p class="card-text">Deaths:{{SelectedDistrictData?.deceased}}</p>
+            </div>
+          </div>
+
+    </div>
+</span> 
+</div>
